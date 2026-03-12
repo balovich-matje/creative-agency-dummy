@@ -1,33 +1,36 @@
+import { Suspense, lazy } from 'react'
 import './Works.css'
+
+const Spline = lazy(() => import('@splinetool/react-spline'))
 
 const projects = [
   {
     title: 'NovaTech',
     category: 'Брендинг / Веб-дизайн',
     description: 'Полный ребрендинг технологической компании — от айдентики до корпоративного сайта.',
-    image: null,
     color: '#1a1a2e',
+    scene: 'https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode',
   },
   {
     title: 'GreenLeaf',
     category: 'E-commerce / Motion',
     description: 'Интернет-магазин органической косметики с анимированным интерфейсом.',
-    image: null,
     color: '#1a2e1a',
+    scene: 'https://prod.spline.design/aR8RJVAStugdKyXD/scene.splinecode',
   },
   {
     title: 'SkyLine Events',
     category: 'Айдентика / Маркетинг',
     description: 'Визуальная система и рекламная кампания для ивент-агентства.',
-    image: null,
     color: '#1a1a2e',
+    scene: 'https://prod.spline.design/Nmx4Vyeze9wJ-9zm/scene.splinecode',
   },
   {
     title: 'UrbanFlow',
     category: 'Приложение / UI/UX',
     description: 'Мобильное приложение для городской навигации с минималистичным дизайном.',
-    image: null,
     color: '#2e1a1a',
+    scene: 'https://prod.spline.design/7ZoGKAmh2VTvMxuy/scene.splinecode',
   },
 ]
 
@@ -55,9 +58,15 @@ function Works() {
                 className="work-card__image"
                 style={{ backgroundColor: project.color }}
               >
-                <div className="work-card__placeholder">
-                  <span>{project.title[0]}</span>
-                </div>
+                <Suspense fallback={
+                  <div className="work-card__placeholder">
+                    <span>{project.title[0]}</span>
+                  </div>
+                }>
+                  <div className="work-card__spline">
+                    <Spline scene={project.scene} />
+                  </div>
+                </Suspense>
               </div>
               <div className="work-card__info">
                 <span className="work-card__category">{project.category}</span>
