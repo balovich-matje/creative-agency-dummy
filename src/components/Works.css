@@ -39,6 +39,16 @@
   overflow: hidden;
 }
 
+.work-card__spline {
+  position: absolute;
+  inset: 0;
+}
+
+.work-card__spline canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 .work-card__placeholder {
   width: 80px;
   height: 80px;
@@ -51,6 +61,12 @@
   font-size: 2rem;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.15);
+  animation: placeholderPulse 2s ease-in-out infinite;
+}
+
+@keyframes placeholderPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
 }
 
 .work-card__info {
