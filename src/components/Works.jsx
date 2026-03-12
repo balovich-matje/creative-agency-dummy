@@ -16,7 +16,7 @@ const projects = [
     category: 'E-commerce / Motion',
     description: 'Интернет-магазин органической косметики с анимированным интерфейсом.',
     color: '#1a2e1a',
-    scene: 'https://prod.spline.design/aR8RJVAStugdKyXD/scene.splinecode',
+    scene: 'https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode',
   },
   {
     title: 'SkyLine Events',
@@ -30,7 +30,7 @@ const projects = [
     category: 'Приложение / UI/UX',
     description: 'Мобильное приложение для городской навигации с минималистичным дизайном.',
     color: '#2e1a1a',
-    scene: 'https://prod.spline.design/7ZoGKAmh2VTvMxuy/scene.splinecode',
+    scene: 'https://prod.spline.design/ZZOWNi4tS7p8xxOs/scene.splinecode',
   },
 ]
 
